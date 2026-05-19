@@ -406,10 +406,10 @@ export default function Home() {
             </div>
 
             {/* Bento Grid 2 layout */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
               
               {/* Card 1: Splash system (col-span-1) */}
-              <div className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 min-h-[220px]">
+              <div className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 min-h-[200px]">
                 <div className="flex justify-between items-start gap-4">
                   <div className="space-y-1.5 text-left">
                     <span className="text-[10px] font-heading font-extrabold text-mustard uppercase tracking-wide">Initialization</span>
@@ -447,7 +447,7 @@ export default function Home() {
               </div>
 
               {/* Card 2: Voice ripple (col-span-2) */}
-              <div className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 md:col-span-2 min-h-[220px]">
+              <div className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 md:col-span-2 min-h-[200px]">
                 <div className="flex justify-between items-start gap-4">
                   <div className="space-y-1.5 text-left">
                     <span className="text-[10px] font-heading font-extrabold text-teal-highlight uppercase tracking-wide">Bilingual Speech</span>
@@ -477,7 +477,7 @@ export default function Home() {
               </div>
 
               {/* Card 3: Checkout sheet (col-span-2) */}
-              <div className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 md:col-span-2 min-h-[220px]">
+              <div className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 md:col-span-2 min-h-[200px]">
                 <div className="flex justify-between items-start gap-4">
                   <div className="space-y-1.5 text-left">
                     <span className="text-[10px] font-heading font-extrabold text-teal-highlight uppercase tracking-wide">Checkout UI</span>
@@ -507,7 +507,7 @@ export default function Home() {
               </div>
 
               {/* Card 4: Perceived check-in (col-span-1) */}
-              <div className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 min-h-[220px]">
+              <div className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 min-h-[200px]">
                 <div className="flex justify-between items-start gap-4">
                   <div className="space-y-1.5 text-left">
                     <span className="text-[10px] font-heading font-extrabold text-cyprus-light uppercase tracking-wide">UX Psychology</span>

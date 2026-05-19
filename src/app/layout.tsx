@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
 import LenisProvider from "@/components/LenisProvider";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -32,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${plusJakartaSans.variable} font-sans min-h-screen antialiased overflow-x-hidden`}
+        className={`${plusJakartaSans.variable} ${spaceGrotesk.variable} font-sans min-h-screen antialiased overflow-x-hidden`}
       >
         <LenisProvider>
           <div className="noise-overlay" />
