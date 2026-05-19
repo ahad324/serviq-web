@@ -14,6 +14,7 @@ interface TeamMember {
   contributions: string[];
   github: string;
   linkedin: string;
+  image?: string;
 }
 
 const MEMBERS: TeamMember[] = [
@@ -31,7 +32,8 @@ const MEMBERS: TeamMember[] = [
       "Integrated location-aware matching telemetry and speech recording modules."
     ],
     github: "https://github.com/ahad324",
-    linkedin: "https://www.linkedin.com/in/abdul-ahad-a08263273"
+    linkedin: "https://www.linkedin.com/in/abdul-ahad-a08263273",
+    image: "/ahad.png"
   },
   {
     name: "Moeez Nadeem",
@@ -47,7 +49,8 @@ const MEMBERS: TeamMember[] = [
       "Established stateless Railway hosting gateways and webhook triggers."
     ],
     github: "https://github.com/moeez5251",
-    linkedin: "https://www.linkedin.com/in/moeez-sheikh/"
+    linkedin: "https://www.linkedin.com/in/moeez-sheikh/",
+    image: "/moeez.jfif"
   }
 ];
 
@@ -84,10 +87,18 @@ export default function TeamSection() {
               <div>
                 {/* Profile Header */}
                 <div className="flex flex-wrap items-center gap-4 mb-6">
-                  {/* Initials Avatar */}
-                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-tr ${member.gradient} flex items-center justify-center font-heading font-extrabold text-lg text-white select-none shadow-md group-hover:scale-105 transition-transform duration-300`}>
-                    {member.avatarInitials}
-                  </div>
+                  {/* Profile Avatar Image with Initials Fallback */}
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-14 h-14 rounded-2xl object-cover border border-cyprus/10 dark:border-sand/15 select-none shadow-md group-hover:scale-105 transition-transform duration-300 shrink-0"
+                    />
+                  ) : (
+                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-tr ${member.gradient} flex items-center justify-center font-heading font-extrabold text-lg text-white select-none shadow-md group-hover:scale-105 transition-transform duration-300 shrink-0`}>
+                      {member.avatarInitials}
+                    </div>
+                  )}
                   <div>
                     <span className="inline-flex items-center gap-1 text-[9px] font-heading font-bold text-mustard uppercase mb-0.5">
                       <MemberIcon size={10} />

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import AppSimulator from "@/components/AppSimulator";
@@ -15,6 +15,7 @@ import {
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [introCompleted, setIntroCompleted] = useState(false);
   
   // Track scroll position of the page for parallax effects
   const { scrollYProgress } = useScroll({
@@ -31,8 +32,17 @@ export default function Home() {
 
   return (
     <div ref={containerRef} className="relative min-h-screen">
-      <IntroAnimation />
-      <Navbar />
+      <IntroAnimation onComplete={() => setIntroCompleted(true)} />
+      <motion.div
+        initial={{ y: -70, opacity: 0 }}
+        animate={introCompleted ? { y: 0, opacity: 1 } : { y: -70, opacity: 0 }}
+        transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1], delay: 0.15 }}
+        className="fixed top-0 left-0 right-0 z-50 pointer-events-none"
+      >
+        <div className="pointer-events-auto">
+          <Navbar />
+        </div>
+      </motion.div>
       
       <main className="flex-1 flex flex-col pt-24">
         {/* HERO SECTION */}
@@ -41,42 +51,62 @@ export default function Home() {
           {/* Parallax Floating Tech Badges (hidden on small viewports for responsive cleanliness) */}
           <motion.div 
             style={{ y: y1 }}
-            className="hidden md:flex absolute top-[15%] left-[8%] z-10 items-center gap-2 px-4 py-2.5 glass-container rounded-2xl border border-cyprus/10 dark:border-sand/15 shadow-md"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={introCompleted ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
+            className="hidden md:block absolute top-[15%] left-[8%] z-10"
           >
-            <div className="p-1.5 rounded-lg bg-green-500/10 text-green-600 dark:text-green-400">
-              <MapPin size={14} />
+            <div className="animate-float-1 accelerated-floating-layer flex items-center gap-2 px-4 py-2.5 glass-container rounded-2xl border border-cyprus/10 dark:border-sand/15 shadow-md">
+              <div className="p-1.5 rounded-lg bg-green-500/10 text-green-600 dark:text-green-400">
+                <MapPin size={14} />
+              </div>
+              <span className="font-sans text-[10px] font-bold text-cyprus dark:text-sand">GPS Geolocator: Active</span>
             </div>
-            <span className="font-sans text-[10px] font-bold text-cyprus dark:text-sand">GPS Geolocator: Active</span>
           </motion.div>
 
           <motion.div 
             style={{ y: y2 }}
-            className="hidden md:flex absolute top-[25%] right-[10%] z-10 items-center gap-2 px-4 py-2.5 glass-container rounded-2xl border border-cyprus/10 dark:border-sand/15 shadow-md"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={introCompleted ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+            className="hidden md:block absolute top-[25%] right-[10%] z-10"
           >
-            <div className="p-1.5 rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400">
-              <Cpu size={14} />
+            <div className="animate-float-2 accelerated-floating-layer flex items-center gap-2 px-4 py-2.5 glass-container rounded-2xl border border-cyprus/10 dark:border-sand/15 shadow-md">
+              <div className="p-1.5 rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400">
+                <Cpu size={14} />
+              </div>
+              <span className="font-sans text-[10px] font-bold text-cyprus dark:text-sand">n8n Gateway: 200 OK</span>
             </div>
-            <span className="font-sans text-[10px] font-bold text-cyprus dark:text-sand">n8n Gateway: 200 OK</span>
           </motion.div>
 
           <motion.div 
             style={{ y: y3 }}
-            className="hidden md:flex absolute bottom-[18%] left-[12%] z-10 items-center gap-2 px-4 py-2.5 glass-container rounded-2xl border border-cyprus/10 dark:border-sand/15 shadow-md"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={introCompleted ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.7 }}
+            className="hidden md:block absolute bottom-[18%] left-[12%] z-10"
           >
-            <div className="p-1.5 rounded-lg bg-mustard/10 text-mustard">
-              <Sparkles size={14} />
+            <div className="animate-float-3 accelerated-floating-layer flex items-center gap-2 px-4 py-2.5 glass-container rounded-2xl border border-cyprus/10 dark:border-sand/15 shadow-md">
+              <div className="p-1.5 rounded-lg bg-mustard/10 text-mustard">
+                <Sparkles size={14} />
+              </div>
+              <span className="font-sans text-[10px] font-bold text-cyprus dark:text-sand">Gemini 1.5 Flash: 98% Conf</span>
             </div>
-            <span className="font-sans text-[10px] font-bold text-cyprus dark:text-sand">Gemini 1.5 Flash: 98% Conf</span>
           </motion.div>
 
           <motion.div 
             style={{ y: y4 }}
-            className="hidden md:flex absolute bottom-[22%] right-[15%] z-10 items-center gap-2 px-4 py-2.5 glass-container rounded-2xl border border-cyprus/10 dark:border-sand/15 shadow-md"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={introCompleted ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
+            className="hidden md:block absolute bottom-[22%] right-[15%] z-10"
           >
-            <div className="p-1.5 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400">
-              <Database size={14} />
+            <div className="animate-float-4 accelerated-floating-layer flex items-center gap-2 px-4 py-2.5 glass-container rounded-2xl border border-cyprus/10 dark:border-sand/15 shadow-md">
+              <div className="p-1.5 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400">
+                <Database size={14} />
+              </div>
+              <span className="font-sans text-[10px] font-bold text-cyprus dark:text-sand">Supabase Relational Log: Sync</span>
             </div>
-            <span className="font-sans text-[10px] font-bold text-cyprus dark:text-sand">Supabase Relational Log: Sync</span>
           </motion.div>
 
           {/* Radial Glowing Background Orbs */}
@@ -84,11 +114,14 @@ export default function Home() {
           <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-teal-highlight/5 blur-3xl pointer-events-none" />
 
           {/* Hero Content */}
-          <motion.div 
-            style={{ opacity }}
-            className="w-full max-w-4xl mx-auto space-y-8 relative z-20 px-2 sm:px-4"
-          >
-            <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-heading font-extrabold text-mustard bg-cyprus/5 dark:bg-sand/10 px-3.5 py-1.5 rounded-full uppercase tracking-widest shadow-sm">
+          <motion.div style={{ opacity }}>
+            <motion.div 
+              initial={{ y: 30, opacity: 0 }}
+              animate={introCompleted ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
+              transition={{ duration: 1.1, ease: [0.25, 1, 0.5, 1], delay: 0.35 }}
+              className="w-full max-w-4xl mx-auto space-y-8 relative z-20 px-2 sm:px-4"
+            >
+              <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-heading font-extrabold text-mustard bg-cyprus/5 dark:bg-sand/10 px-3.5 py-1.5 rounded-full uppercase tracking-widest shadow-sm">
               <Sparkles size={12} className="animate-pulse" />
               AI-Native Local Service Discovery
             </span>
@@ -117,12 +150,19 @@ export default function Home() {
               </a>
             </div>
           </motion.div>
+        </motion.div>
         </section>
 
         {/* INTERACTIVE SIMULATOR */}
         <section id="live-demo" className="py-24 px-4 sm:px-6 relative overflow-hidden bg-white/30 dark:bg-cyprus-dark/10 border-t border-cyprus/5 dark:border-sand/5 scroll-mt-24">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-teal-highlight/5 blur-3xl pointer-events-none" />
-          <div className="w-full max-w-6xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="w-full max-w-6xl mx-auto"
+          >
             <div className="text-center max-w-lg mx-auto mb-16 space-y-3">
               <span className="inline-block text-[10px] font-heading font-extrabold text-mustard bg-cyprus/5 dark:bg-sand/10 px-3 py-1 rounded-full uppercase tracking-wider">
                 Live Emulation
@@ -136,7 +176,7 @@ export default function Home() {
             </div>
             
             <AppSimulator />
-          </div>
+          </motion.div>
         </section>
 
         {/* WHY SERVIQ: BENTO GRID */}
@@ -158,7 +198,13 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               
               {/* Card 1: NLP Intent (col-span-2) */}
-              <div className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 md:col-span-2 min-h-[220px]">
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] }}
+                className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 md:col-span-2 min-h-[220px]"
+              >
                 <div className="flex justify-between items-start gap-4">
                   <div className="space-y-1.5 text-left">
                     <span className="text-[10px] font-heading font-extrabold text-mustard uppercase tracking-wide">NLP Processing</span>
@@ -175,10 +221,16 @@ export default function Home() {
                   <ArrowRight size={12} className="text-cyprus/40 dark:text-sand/40" />
                   <span className="font-mono text-[10px] text-emerald-600 dark:text-emerald-400 font-bold">Category: air_conditioner_repair (98%)</span>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Card 2: Dynamic Surcharges (col-span-1) */}
-              <div className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 min-h-[220px]">
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1], delay: 0.1 }}
+                className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 min-h-[220px]"
+              >
                 <div className="flex justify-between items-start gap-4">
                   <div className="space-y-1.5 text-left">
                     <span className="text-[10px] font-heading font-extrabold text-teal-highlight uppercase tracking-wide">Pricing model</span>
@@ -199,10 +251,16 @@ export default function Home() {
                     <span className="text-cyprus dark:text-teal-highlight">Rs. 200 Travel Fee</span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Card 3: Geolocator Radar (col-span-1) */}
-              <div className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 min-h-[220px]">
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1], delay: 0.15 }}
+                className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 min-h-[220px]"
+              >
                 <div className="flex justify-between items-start gap-4">
                   <div className="space-y-1.5 text-left">
                     <span className="text-[10px] font-heading font-extrabold text-cyprus-light uppercase tracking-wide">Geofencing</span>
@@ -222,10 +280,16 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Card 4: Stepper Pipeline (col-span-2) */}
-              <div className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 md:col-span-2 min-h-[220px]">
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1], delay: 0.2 }}
+                className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 md:col-span-2 min-h-[220px]"
+              >
                 <div className="flex justify-between items-start gap-4">
                   <div className="space-y-1.5 text-left">
                     <span className="text-[10px] font-heading font-extrabold text-mustard uppercase tracking-wide">Status tracking</span>
@@ -244,7 +308,7 @@ export default function Home() {
                   <span>Working</span>
                   <span>Done</span>
                 </div>
-              </div>
+              </motion.div>
 
             </div>
           </div>
