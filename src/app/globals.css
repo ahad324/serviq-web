@@ -14,7 +14,7 @@
   --color-cyprus-light: #006B67;
   --color-cyprus-dark: #002E2C;
   --color-sand: #F0EDE5;
-  --color-mustard: #F9BC60;
+  --color-mustard: var(--mustard);
   --color-teal-highlight: #ABD1C6;
   --color-surface-dark: #E5E2D8;
 
@@ -49,6 +49,7 @@
 }
 
 :root {
+  --mustard: #B45309;    /* High-contrast amber-orange for light backgrounds */
   --background: #F0EDE5; /* Sand Background */
   --foreground: #002E2C; /* Cyprus Dark text */
   --card: #FFFFFF;       /* White Surface */
@@ -61,7 +62,7 @@
   --secondary-foreground: #002E2C;
   --muted: #E5E2D8;      /* Surface Dark */
   --muted-foreground: #006B67;
-  --accent: #F9BC60;     /* Mustard Accent */
+  --accent: var(--mustard);
   --accent-foreground: #002E2C;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: #FFFFFF;
@@ -73,6 +74,7 @@
 
 /* Default dark mode set up */
 .dark {
+  --mustard: #F9BC60;    /* Soft gold/yellow for dark backgrounds */
   --background: #002E2C; /* Cyprus Dark background */
   --foreground: #F0EDE5; /* Sand text */
   --card: #004643;       /* Cyprus Primary Card */
@@ -85,7 +87,7 @@
   --secondary-foreground: #F0EDE5;
   --muted: rgba(240, 237, 229, 0.1);
   --muted-foreground: #ABD1C6;
-  --accent: #F9BC60;     /* Mustard */
+  --accent: var(--mustard);
   --accent-foreground: #002E2C;
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: #002E2C;

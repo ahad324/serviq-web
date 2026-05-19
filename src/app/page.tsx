@@ -9,7 +9,7 @@ import TechnicalDashboard from "@/components/TechnicalDashboard";
 import TeamSection from "@/components/TeamSection";
 import { 
   Languages, Cpu, LineChart, FileCheck2, 
-  Smartphone, Eye, Layers, Sparkles, MapPin, CheckCircle2, ShieldCheck, Database, Mic, ArrowRight, Github, Bolt
+  Smartphone, Eye, Layers, Sparkles, MapPin, CheckCircle2, ShieldCheck, Database, Mic, ArrowRight, Github
 } from "lucide-react";
 
 export default function Home() {
@@ -429,9 +429,11 @@ export default function Home() {
           {/* Col 1: Brand Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-cyprus dark:bg-teal-highlight text-white dark:text-cyprus-dark flex items-center justify-center shadow-md">
-                <Bolt size={16} className="fill-current" />
-              </div>
+              <img
+                src="/logo.png"
+                alt="Serviq Logo"
+                className="w-8 h-8 rounded-lg object-cover shadow-md"
+              />
               <span className="font-heading font-black text-xl tracking-wider text-cyprus dark:text-sand">
                 SERVIQ
               </span>
@@ -512,14 +514,21 @@ export default function Home() {
 
         </div>
 
-        {/* Bottom copyright only (No 'made with' attribution block) */}
+        {/* Bottom footer text (No 'made with' or 'licensed under MIT' attribution block) */}
         <div className="max-w-6xl mx-auto border-t border-cyprus/5 dark:border-sand/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="font-sans text-[11px] text-cyprus/40 dark:text-sand/40">
-            &copy; {new Date().getFullYear()} Serviq. All source nodes licensed under MIT.
+            &copy; {new Date().getFullYear()} Serviq.
           </p>
-          <div className="flex gap-6 font-sans text-[11px] text-cyprus/40 dark:text-sand/40">
-            <a href="#" className="hover:underline">Privacy Isolation</a>
-            <a href="#" className="hover:underline">Terms of Service</a>
+          <div className="font-sans text-[11px] text-cyprus/50 dark:text-sand/55">
+            Developed for the{" "}
+            <a 
+              href="https://gdg.community.dev/events/details/google-gdg-live-pakistan-presents-ai-seekho-2026-kick-off-event/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-cyprus dark:text-teal-highlight hover:underline"
+            >
+              AI Seekho 2026 Hackathon (Round 1)
+            </a>
           </div>
         </div>
       </footer>

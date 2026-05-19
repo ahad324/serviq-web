@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Moon, Sun, Menu, X, ArrowUpRight, Bolt } from "lucide-react";
+import { Moon, Sun, Menu, X, ArrowUpRight } from "lucide-react";
 
 export default function Navbar() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -38,9 +38,11 @@ export default function Navbar() {
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl z-50 glass-container px-6 py-4 rounded-3xl transition-all duration-300 flex items-center justify-between">
       {/* Logo */}
       <a href="#" className="flex items-center gap-2 group">
-        <div className="w-8 h-8 rounded-lg bg-cyprus dark:bg-teal-highlight text-white dark:text-cyprus-dark flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
-          <Bolt size={16} className="fill-current" />
-        </div>
+        <img
+          src="/logo.png"
+          alt="Serviq Logo"
+          className="w-8 h-8 rounded-lg object-cover shadow-md group-hover:scale-105 transition-transform duration-300"
+        />
         <span className="font-heading font-black text-xl tracking-wider text-cyprus dark:text-sand">
           SERVIQ
         </span>

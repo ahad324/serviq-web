@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, AppWindow, Cpu, Code2, Terminal } from "lucide-react";
+import { Github, Linkedin, AppWindow, Cpu, Award } from "lucide-react";
 
 interface TeamMember {
   name: string;
@@ -11,8 +11,7 @@ interface TeamMember {
   gradient: string;
   icon: any;
   techStack: string[];
-  consoleTitle: string;
-  consoleCode: string;
+  contributions: string[];
   github: string;
   linkedin: string;
 }
@@ -20,50 +19,33 @@ interface TeamMember {
 const MEMBERS: TeamMember[] = [
   {
     name: "AbdulAhad",
-    role: "Lead Mobile Architect & Co-Founder",
-    tag: "Flutter & State Expert",
+    role: "Lead Mobile Architect & DevOps Engineer",
+    tag: "Flutter & CI/CD",
     avatarInitials: "AA",
     gradient: "from-cyprus to-teal-highlight",
     icon: AppWindow,
-    techStack: ["Flutter", "Riverpod", "Geolocator API", "GoRouter", "Dart SDK"],
-    consoleTitle: "mobile_client_controller.dart",
-    consoleCode: `class SpeechNotifier extends StateNotifier<SpeechState> {
-  final GeolocatorPlatform _gps = GeolocatorPlatform.instance;
-
-  Future<void> dispatchIntent(String transcript) async {
-    final pos = await _gps.getCurrentPosition();
-    state = SpeechState.analyzing();
-    final res = await _client.post('/webhook', {
-      'query': transcript,
-      'lat': pos.latitude,
-      'lng': pos.longitude
-    });
-    state = SpeechState.success(res.data);
-  }
-}`,
+    techStack: ["Flutter", "Riverpod State", "GitHub Actions", "Build Pipelines", "Geolocator API"],
+    contributions: [
+      "Engineered the responsive cross-platform Flutter mobile client application.",
+      "Configured automatic Android APK packaging and CI/CD GitHub Actions release workflows.",
+      "Integrated location-aware matching telemetry and speech recording modules."
+    ],
     github: "https://github.com/ahad324",
     linkedin: "https://www.linkedin.com/in/abdul-ahad-a08263273"
   },
   {
     name: "Moeez Nadeem",
-    role: "Lead AI & Systems Engineer & Co-Founder",
-    tag: "Workflow & Database Expert",
+    role: "Lead AI & Systems Engineer",
+    tag: "Workflows & Agentic AI",
     avatarInitials: "MN",
     gradient: "from-cyprus-light to-mustard",
     icon: Cpu,
-    techStack: ["n8n core", "Gemini 1.5 Flash", "Supabase", "Railway", "PostgreSQL"],
-    consoleTitle: "n8n_agent_orchestrator.json",
-    consoleCode: `{
-  "nodes": [
-    { "type": "n8n-nodes-base.webhook", "name": "HTTPS Gateway" },
-    { "type": "n8n-nodes-base.googleSheets", "name": "Fetch Providers" },
-    { "type": "n8n-nodes-base.googleGemini", "name": "Intent Model" },
-    { "type": "n8n-nodes-base.supabase", "name": "Sync Bookings" }
-  ],
-  "connections": {
-    "Gateway": [ { "node": "Intent Model", "index": 0 } ]
-  }
-}`,
+    techStack: ["n8n Workflows", "Gemini 1.5 Flash", "Supabase DB", "Railway API", "JSON Schema"],
+    contributions: [
+      "Designed the 5-agent n8n orchestrator intent mapping pipeline.",
+      "Constructed secure Row-Level Security rules and Supabase relational schemas.",
+      "Established stateless Railway hosting gateways and webhook triggers."
+    ],
     github: "https://github.com/moeez5251",
     linkedin: "https://www.linkedin.com/in/moeez-sheikh/"
   }
@@ -132,24 +114,19 @@ export default function TeamSection() {
                   ))}
                 </div>
 
-                {/* Developer Terminal Box */}
-                <div className="w-full bg-cyprus-dark rounded-2xl border border-cyprus-light/10 overflow-hidden mb-6 flex flex-col">
-                  {/* Title Bar */}
-                  <div className="flex items-center justify-between px-4 py-2 border-b border-cyprus-light/10 bg-cyprus-darker">
-                    <span className="font-mono text-[9px] text-cyprus-light dark:text-teal-highlight flex items-center gap-1.5 font-bold">
-                      <Code2 size={10} />
-                      {member.consoleTitle}
-                    </span>
-                    <div className="flex gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-red-500/60" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-yellow-500/60" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-green-500/60" />
-                    </div>
-                  </div>
-                  {/* Code Panel */}
-                  <div className="p-4 font-mono text-[10px] text-emerald-400 overflow-x-auto leading-relaxed select-text">
-                    <pre className="whitespace-pre overflow-x-auto">{member.consoleCode}</pre>
-                  </div>
+                {/* Contributions List */}
+                <div className="space-y-3 mb-6">
+                  <h4 className="font-heading font-bold text-[11px] text-cyprus/90 dark:text-sand/90 uppercase tracking-wider">
+                    Key Contributions
+                  </h4>
+                  <ul className="space-y-2">
+                    {member.contributions.map((contrib, cIdx) => (
+                      <li key={cIdx} className="flex items-start gap-2 text-xs font-sans text-cyprus/70 dark:text-sand/75 leading-relaxed font-medium">
+                        <span className="w-1.5 h-1.5 rounded-full bg-teal-highlight/80 dark:bg-teal-highlight mt-1.5 shrink-0" />
+                        <span>{contrib}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
 
