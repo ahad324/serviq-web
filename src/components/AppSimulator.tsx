@@ -108,7 +108,7 @@ export default function AppSimulator() {
 
     // Stage 2: NLP Intent Parsing
     setStage("nlp");
-    setLogs((prev) => [...prev, "Initializing bilingual NLP intent parser..."]);
+    setLogs((prev) => [...prev, "Initializing bilingual NLP intent parser…"]);
     await new Promise((resolve) => setTimeout(resolve, 800));
     setLogs((prev) => [
       ...prev,
@@ -120,11 +120,11 @@ export default function AppSimulator() {
 
     // Stage 3: Multi-Agent Match & Score
     setStage("matching");
-    setLogs((prev) => [...prev, "Querying Google Sheets provider directory..."]);
+    setLogs((prev) => [...prev, "Querying Google Sheets provider directory…"]);
     await new Promise((resolve) => setTimeout(resolve, 600));
-    setLogs((prev) => [...prev, "Running Haversine distance algorithm..."]);
+    setLogs((prev) => [...prev, "Running Haversine distance algorithm…"]);
     await new Promise((resolve) => setTimeout(resolve, 600));
-    setLogs((prev) => [...prev, "Running weighted scoring (Distance: 40%, Rating: 45%, Reliability: 15%)..."]);
+    setLogs((prev) => [...prev, "Running weighted scoring (Distance: 40%, Rating: 45%, Reliability: 15%)…"]);
     await new Promise((resolve) => setTimeout(resolve, 800));
 
     // Stage 4: Selected Provider Card
@@ -280,7 +280,7 @@ export default function AppSimulator() {
                     {/* Mock Textarea */}
                     <div className="p-3 bg-white dark:bg-cyprus rounded-2xl border border-cyprus/10 dark:border-sand/10 text-left relative min-h-[80px]">
                       <span className="text-[11px] text-cyprus/40 dark:text-sand/40">
-                        Try saying: "Kitchen sink is blocked..."
+                        Try saying: "Kitchen sink is blocked…"
                       </span>
                     </div>
 

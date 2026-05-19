@@ -27,11 +27,11 @@ export default function Navbar() {
   };
 
   const navLinks = [
+    { name: "Live Demo", href: "#live-demo" },
     { name: "Why Serviq", href: "#why-serviq" },
     { name: "How It Works", href: "#how-it-works" },
-    { name: "Live Demo", href: "#live-demo" },
-    { name: "Meet The Team", href: "#meet-team" },
     { name: "Tech Docs", href: "#tech-docs" },
+    { name: "Meet The Team", href: "#meet-team" },
   ];
 
   return (
@@ -96,7 +96,7 @@ export default function Navbar() {
 
       {/* Mobile Links */}
       {isOpen && (
-        <div className="absolute top-[80px] left-0 w-full glass-container rounded-3xl p-6 flex flex-col gap-4 md:hidden animate-in fade-in slide-in-from-top-5 duration-200">
+        <div className="absolute top-[80px] left-0 w-full bg-white dark:bg-[#002E2C] border border-cyprus/10 dark:border-sand/15 shadow-2xl rounded-3xl p-6 flex flex-col gap-4 md:hidden animate-in fade-in slide-in-from-top-5 duration-200 z-50">
           {navLinks.map((link) => (
             <a
               key={link.name}

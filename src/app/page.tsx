@@ -7,6 +7,7 @@ import AppSimulator from "@/components/AppSimulator";
 import OrchestratorFlow from "@/components/OrchestratorFlow";
 import TechnicalDashboard from "@/components/TechnicalDashboard";
 import TeamSection from "@/components/TeamSection";
+import IntroAnimation from "@/components/IntroAnimation";
 import { 
   Languages, Cpu, LineChart, FileCheck2, 
   Smartphone, Eye, Layers, Sparkles, MapPin, CheckCircle2, ShieldCheck, Database, Mic, ArrowRight, Github
@@ -30,6 +31,7 @@ export default function Home() {
 
   return (
     <div ref={containerRef} className="relative min-h-screen">
+      <IntroAnimation />
       <Navbar />
       
       <main className="flex-1 flex flex-col pt-24">
@@ -91,7 +93,7 @@ export default function Home() {
               AI-Native Local Service Discovery
             </span>
             
-            <h1 className="font-heading font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight text-cyprus dark:text-sand leading-[1.05] max-w-3xl mx-auto">
+            <h1 className="font-heading font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight text-cyprus dark:text-sand leading-[1.05] max-w-3xl mx-auto text-balance">
               Say goodbye to search filters.<br />
               <span className="text-cyprus-light dark:text-teal-highlight">Just tell us what you need.</span>
             </h1>
@@ -118,14 +120,14 @@ export default function Home() {
         </section>
 
         {/* INTERACTIVE SIMULATOR */}
-        <section id="live-demo" className="py-24 px-4 sm:px-6 relative overflow-hidden bg-white/30 dark:bg-cyprus-dark/10 border-t border-cyprus/5 dark:border-sand/5">
+        <section id="live-demo" className="py-24 px-4 sm:px-6 relative overflow-hidden bg-white/30 dark:bg-cyprus-dark/10 border-t border-cyprus/5 dark:border-sand/5 scroll-mt-24">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-teal-highlight/5 blur-3xl pointer-events-none" />
           <div className="w-full max-w-6xl mx-auto">
             <div className="text-center max-w-lg mx-auto mb-16 space-y-3">
               <span className="inline-block text-[10px] font-heading font-extrabold text-mustard bg-cyprus/5 dark:bg-sand/10 px-3 py-1 rounded-full uppercase tracking-wider">
                 Live Emulation
               </span>
-              <h2 className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl text-cyprus dark:text-sand">
+              <h2 className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl text-cyprus dark:text-sand text-balance">
                 Test the Client Sandbox
               </h2>
               <p className="font-sans text-xs sm:text-sm text-cyprus/70 dark:text-sand/70 leading-relaxed">
@@ -138,7 +140,7 @@ export default function Home() {
         </section>
 
         {/* WHY SERVIQ: BENTO GRID */}
-        <section id="why-serviq" className="py-24 px-4 sm:px-6 bg-cyprus/5 dark:bg-cyprus-dark/20 border-y border-cyprus/5 dark:border-sand/5 relative">
+        <section id="why-serviq" className="py-24 px-4 sm:px-6 bg-cyprus/5 dark:bg-cyprus-dark/20 border-y border-cyprus/5 dark:border-sand/5 relative scroll-mt-24">
           <div className="w-full max-w-6xl mx-auto">
             <div className="text-center max-w-lg mx-auto mb-16 space-y-3">
               <span className="inline-block text-xs font-heading font-extrabold text-mustard bg-cyprus/5 dark:bg-sand/10 px-3 py-1 rounded-full uppercase tracking-wider">
@@ -249,7 +251,7 @@ export default function Home() {
         </section>
 
         {/* HOW IT WORKS */}
-        <section id="how-it-works" className="py-20 px-4 sm:px-6 relative">
+        <section id="how-it-works" className="py-20 px-4 sm:px-6 relative scroll-mt-24">
           <div className="w-full max-w-6xl mx-auto">
             <div className="text-center max-w-lg mx-auto mb-16 space-y-3">
               <span className="inline-block text-xs font-heading font-extrabold text-mustard bg-cyprus/5 dark:bg-sand/10 px-3 py-1 rounded-full uppercase tracking-wider">
@@ -369,7 +371,7 @@ export default function Home() {
                 {/* Visual interface */}
                 <div className="flex items-center gap-2 mt-4 text-[10px] font-mono text-cyprus/50 dark:text-sand/50">
                   <span className="w-1.5 h-1.5 rounded-full bg-mustard animate-pulse" />
-                  <span>"Scanning 50+ providers..."</span>
+                  <span>"Scanning 50+ providers…"</span>
                 </div>
               </div>
 
@@ -378,7 +380,7 @@ export default function Home() {
         </section>
 
         {/* DEVELOPER DOCS */}
-        <section id="tech-docs" className="py-20 px-4 sm:px-6">
+        <section id="tech-docs" className="py-20 px-4 sm:px-6 scroll-mt-24">
           <TechnicalDashboard />
         </section>
 
