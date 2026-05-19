@@ -154,10 +154,13 @@ export default function OrchestratorFlow() {
                   onClick={() => setActiveNodeId(node.id)}
                   className={`p-3.5 rounded-2xl border text-left flex flex-col justify-between gap-3 transition-all duration-300 relative overflow-hidden group ${
                     isActive
-                      ? "bg-cyprus dark:bg-teal-highlight/10 border-cyprus dark:border-teal-highlight shadow-md scale-[1.02] z-10"
-                      : "bg-white/40 dark:bg-transparent border-cyprus/10 dark:border-sand/10 hover:border-cyprus/25 dark:hover:border-sand/25"
+                      ? "bg-cyprus dark:bg-teal-highlight/10 border-cyprus dark:border-teal-highlight shadow-[0_0_20px_rgba(20,110,120,0.12)] scale-[1.02] z-10"
+                      : "bg-white/40 dark:bg-transparent border-cyprus/10 dark:border-sand/10 hover:border-cyprus/25 dark:hover:border-sand/25 hover:translate-y-[-2px]"
                   }`}
                 >
+                  {isActive && (
+                    <span className="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-mustard animate-pulse" />
+                  )}
                   <div className="flex justify-between items-start w-full">
                     <div className={`p-2 rounded-xl transition-colors duration-300 ${
                       isActive 
@@ -208,7 +211,7 @@ export default function OrchestratorFlow() {
       </div>
 
       {/* Details Inspector Panel */}
-      <div className="w-full xl:w-[350px] p-5 sm:p-6 glass-container rounded-3xl flex flex-col justify-between border-cyprus/10 dark:border-teal-highlight/20 relative overflow-hidden shrink-0">
+      <div className="w-full xl:w-[350px] p-5 sm:p-6 glass-container rounded-3xl flex flex-col justify-between border border-cyprus/10 dark:border-teal-highlight/20 relative overflow-hidden shrink-0">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeNode.id}
@@ -244,23 +247,35 @@ export default function OrchestratorFlow() {
             </div>
 
             {/* Inputs/Outputs */}
-            <div className="space-y-3">
-              <div className="p-3 bg-cyprus/5 dark:bg-sand/5 rounded-xl border border-cyprus/5 dark:border-sand/5">
-                <span className="text-[8px] font-heading font-bold text-cyprus/50 dark:text-sand/50 uppercase block mb-1">
-                  Expected Input Schema
-                </span>
-                <code className="font-mono text-[9px] text-cyprus-dark dark:text-teal-highlight block break-words whitespace-pre-wrap">
+            <div className="space-y-4">
+              {/* Input block */}
+              <div className="rounded-2xl overflow-hidden border border-cyprus/10 dark:border-sand/10 bg-cyprus-dark/5 dark:bg-cyprus-dark/50">
+                <div className="flex items-center justify-between px-3.5 py-2 bg-cyprus/5 dark:bg-white/5 border-b border-cyprus/10 dark:border-sand/10">
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-red-500/80" />
+                    <span className="w-2 h-2 rounded-full bg-yellow-500/80" />
+                    <span className="w-2 h-2 rounded-full bg-green-500/80" />
+                  </div>
+                  <span className="text-[8px] font-mono text-cyprus/40 dark:text-sand/40 font-bold uppercase tracking-wider">schema.json</span>
+                </div>
+                <div className="p-3 font-mono text-[9px] text-cyprus-dark dark:text-teal-highlight break-words whitespace-pre-wrap leading-relaxed select-all">
                   {activeNode.input}
-                </code>
+                </div>
               </div>
 
-              <div className="p-3 bg-cyprus/5 dark:bg-sand/5 rounded-xl border border-cyprus/5 dark:border-sand/5">
-                <span className="text-[8px] font-heading font-bold text-cyprus/50 dark:text-sand/50 uppercase block mb-1">
-                  Generated Output JSON
-                </span>
-                <code className="font-mono text-[9px] text-cyprus-dark dark:text-mustard block break-words whitespace-pre-wrap">
+              {/* Output block */}
+              <div className="rounded-2xl overflow-hidden border border-cyprus/10 dark:border-sand/10 bg-cyprus-dark/5 dark:bg-cyprus-dark/50">
+                <div className="flex items-center justify-between px-3.5 py-2 bg-cyprus/5 dark:bg-white/5 border-b border-cyprus/10 dark:border-sand/10">
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-red-500/80" />
+                    <span className="w-2 h-2 rounded-full bg-yellow-500/80" />
+                    <span className="w-2 h-2 rounded-full bg-green-500/80" />
+                  </div>
+                  <span className="text-[8px] font-mono text-cyprus/40 dark:text-sand/40 font-bold uppercase tracking-wider">output.json</span>
+                </div>
+                <div className="p-3 font-mono text-[9px] text-cyprus-dark dark:text-mustard break-words whitespace-pre-wrap leading-relaxed select-all">
                   {activeNode.output}
-                </code>
+                </div>
               </div>
             </div>
           </motion.div>

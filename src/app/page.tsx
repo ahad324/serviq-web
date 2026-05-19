@@ -197,20 +197,23 @@ export default function Home() {
         {/* WHY SERVIQ: BENTO GRID */}
         <section id="why-serviq" className="py-24 px-4 sm:px-6 bg-cyprus/5 dark:bg-cyprus-dark/20 border-y border-cyprus/5 dark:border-sand/5 relative scroll-mt-24">
           <div className="w-full max-w-6xl mx-auto">
-            <div className="text-center max-w-lg mx-auto mb-16 space-y-3">
-              <span className="inline-block text-xs font-heading font-extrabold text-mustard bg-cyprus/5 dark:bg-sand/10 px-3 py-1 rounded-full uppercase tracking-wider">
-                The Serviq difference
-              </span>
-              <h2 className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl text-cyprus dark:text-sand">
+            
+            <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-heading font-extrabold uppercase tracking-widest text-mustard bg-mustard/10 border border-mustard/20">
+                <Sparkles size={10} className="animate-pulse" />
+                <span>Innovative Dispatch</span>
+              </div>
+              <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl text-cyprus dark:text-sand tracking-tight leading-tight">
                 The NLP Paradigm Shift
               </h2>
-              <p className="font-sans text-xs sm:text-sm text-cyprus/70 dark:text-sand/70 leading-relaxed">
+              <div className="w-12 h-1 bg-mustard/30 dark:bg-mustard/40 mx-auto rounded-full" />
+              <p className="font-sans text-xs sm:text-sm md:text-base text-cyprus/70 dark:text-sand/70 max-w-lg mx-auto leading-relaxed">
                 Replacing traditional filters with a unified natural language layer to automate regional dispatch.
               </p>
             </div>
 
             {/* Bento Grid layout */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
               
               {/* Card 1: NLP Intent (col-span-2) */}
               <motion.div 
@@ -218,7 +221,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] }}
-                className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 md:col-span-2 min-h-[220px]"
+                className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 md:col-span-2 min-h-[200px]"
               >
                 <div className="flex justify-between items-start gap-4">
                   <div className="space-y-1.5 text-left">
@@ -230,11 +233,20 @@ export default function Home() {
                     <Languages size={18} />
                   </div>
                 </div>
-                {/* Visual interface */}
-                <div className="flex items-center gap-3 p-3 bg-cyprus-dark/5 dark:bg-sand/5 rounded-2xl border border-cyprus/5 dark:border-sand/5 mt-4">
-                  <span className="font-mono text-[10px] text-cyprus dark:text-teal-highlight font-semibold">"ac leak ho raha hai"</span>
-                  <ArrowRight size={12} className="text-cyprus/40 dark:text-sand/40" />
-                  <span className="font-mono text-[10px] text-emerald-600 dark:text-emerald-400 font-bold">Category: air_conditioner_repair (98%)</span>
+                {/* Visual compiler simulator interface */}
+                <div className="mt-4 p-3 rounded-2xl bg-cyprus-dark/5 dark:bg-cyprus-dark/40 border border-cyprus/5 dark:border-sand/5 font-mono text-[10px] text-left space-y-1">
+                  <div className="flex items-center gap-1.5 text-cyprus/40 dark:text-sand/30">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-500/60" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-yellow-500/60" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500/60" />
+                    <span className="ml-1 text-[8px] font-bold uppercase tracking-wider">compiler.log</span>
+                  </div>
+                  <div className="text-cyprus/75 dark:text-teal-highlight/85 font-semibold">
+                    &gt; input: <span className="text-mustard font-bold">"ac cleaning kar do"</span>
+                  </div>
+                  <div className="text-emerald-600 dark:text-emerald-400 font-bold">
+                    &gt; intent: "air_conditioner_clean" (98%)
+                  </div>
                 </div>
               </motion.div>
 
@@ -244,7 +256,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1], delay: 0.1 }}
-                className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 min-h-[220px]"
+                className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 min-h-[200px]"
               >
                 <div className="flex justify-between items-start gap-4">
                   <div className="space-y-1.5 text-left">
@@ -257,13 +269,17 @@ export default function Home() {
                   </div>
                 </div>
                 {/* Visual interface */}
-                <div className="space-y-1.5 mt-4 text-left">
-                  <div className="w-full h-1.5 bg-cyprus/10 dark:bg-sand/10 rounded-full overflow-hidden">
-                    <div className="w-3/4 h-full bg-teal-highlight" />
+                <div className="mt-4 p-3 rounded-2xl bg-cyprus-dark/5 dark:bg-cyprus-dark/40 border border-cyprus/5 dark:border-sand/5 font-sans text-xs space-y-1.5 text-left">
+                  <div className="flex justify-between items-center text-[10px] font-bold uppercase tracking-wider text-cyprus/40 dark:text-sand/35">
+                    <span>Travel Surcharge</span>
+                    <span className="font-mono text-emerald-600 dark:text-emerald-400">-50% Decay</span>
                   </div>
-                  <div className="flex justify-between text-[10px] font-mono font-bold text-cyprus/60 dark:text-sand/60">
-                    <span>Distance: 2.34 km</span>
-                    <span className="text-cyprus dark:text-teal-highlight">Rs. 200 Travel Fee</span>
+                  <div className="flex items-end justify-between font-heading font-black text-cyprus dark:text-sand">
+                    <span className="text-sm opacity-50 line-through">Rs. 400</span>
+                    <span className="text-base text-mustard">Rs. 200</span>
+                  </div>
+                  <div className="w-full h-1.5 bg-cyprus/10 dark:bg-sand/10 rounded-full overflow-hidden">
+                    <div className="h-full w-1/2 bg-mustard rounded-full animate-pulse" />
                   </div>
                 </div>
               </motion.div>
@@ -274,7 +290,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1], delay: 0.15 }}
-                className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 min-h-[220px]"
+                className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 min-h-[200px]"
               >
                 <div className="flex justify-between items-start gap-4">
                   <div className="space-y-1.5 text-left">
@@ -286,12 +302,16 @@ export default function Home() {
                     <MapPin size={18} />
                   </div>
                 </div>
-                {/* Visual interface */}
-                <div className="flex justify-center py-2 mt-2">
-                  <div className="relative w-12 h-12 flex items-center justify-center">
-                    <div className="absolute w-full h-full rounded-full border border-cyprus-light/30 dark:border-teal-highlight/30 animate-ping" />
-                    <div className="w-4 h-4 rounded-full bg-cyprus-light dark:bg-teal-highlight flex items-center justify-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                {/* Visual coordinate locator */}
+                <div className="mt-4 p-3 rounded-2xl bg-cyprus-dark/5 dark:bg-cyprus-dark/40 border border-cyprus/5 dark:border-sand/5 flex items-center justify-between">
+                  <div className="flex items-center gap-1.5 text-cyprus/75 dark:text-teal-highlight/85 font-mono text-[9px] font-semibold">
+                    <MapPin size={10} className="text-mustard animate-bounce" />
+                    <span>33.5684, 73.1254</span>
+                  </div>
+                  <div className="relative w-6 h-6 flex items-center justify-center">
+                    <div className="absolute w-full h-full rounded-full border border-teal-highlight/30 animate-ping" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-teal-highlight flex items-center justify-center">
+                      <div className="w-1 h-1 rounded-full bg-white animate-pulse" />
                     </div>
                   </div>
                 </div>
@@ -303,7 +323,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1], delay: 0.2 }}
-                className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 md:col-span-2 min-h-[220px]"
+                className="p-6 bg-white dark:bg-cyprus rounded-3xl border border-cyprus/5 dark:border-sand/10 shadow-sm flex flex-col justify-between hover:border-cyprus/25 dark:hover:border-teal-highlight/30 transition-all duration-300 md:col-span-2 min-h-[200px]"
               >
                 <div className="flex justify-between items-start gap-4">
                   <div className="space-y-1.5 text-left">
@@ -316,12 +336,28 @@ export default function Home() {
                   </div>
                 </div>
                 {/* Visual interface */}
-                <div className="grid grid-cols-5 gap-2 mt-4 text-[9px] font-heading font-extrabold text-center text-cyprus/30 dark:text-sand/30">
-                  <span className="text-cyprus dark:text-teal-highlight">Confirmed</span>
-                  <span className="text-cyprus dark:text-teal-highlight">En Route</span>
-                  <span className="text-mustard animate-pulse">Arrived</span>
-                  <span>Working</span>
-                  <span>Done</span>
+                <div className="mt-4 p-3 rounded-2xl bg-cyprus-dark/5 dark:bg-cyprus-dark/40 border border-cyprus/5 dark:border-sand/5">
+                  <div className="relative flex justify-between px-2 w-full">
+                    <div className="absolute top-2.5 left-[18px] right-[18px] h-[2px] bg-cyprus/10 dark:bg-sand/10 -translate-y-1/2 z-0" />
+                    <div className="absolute top-2.5 left-[18px] w-[66.7%] h-[2px] bg-mustard -translate-y-1/2 z-0" />
+                    
+                    <div className="flex flex-col items-center gap-1.5 z-10 relative">
+                      <span className="w-5 h-5 rounded-full bg-mustard text-white text-[9px] font-bold flex items-center justify-center shadow-md">✓</span>
+                      <span className="text-[8px] font-heading font-extrabold text-cyprus/60 dark:text-sand/60">Confirmed</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-1.5 z-10 relative">
+                      <span className="w-5 h-5 rounded-full bg-mustard text-white text-[9px] font-bold flex items-center justify-center shadow-md">✓</span>
+                      <span className="text-[8px] font-heading font-extrabold text-cyprus/60 dark:text-sand/60">En Route</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-1.5 z-10 relative">
+                      <span className="w-5 h-5 rounded-full bg-white dark:bg-cyprus border-2 border-mustard text-mustard text-[9px] font-bold flex items-center justify-center animate-pulse shadow-md">●</span>
+                      <span className="text-[8px] font-heading font-extrabold text-mustard font-bold">Arrived</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-1.5 z-10 relative opacity-40">
+                      <span className="w-5 h-5 rounded-full bg-white dark:bg-cyprus border border-cyprus/20 dark:border-sand/20 text-[9px] flex items-center justify-center"></span>
+                      <span className="text-[8px] font-heading font-extrabold text-cyprus/60 dark:text-sand/60">Done</span>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
 
@@ -332,14 +368,17 @@ export default function Home() {
         {/* HOW IT WORKS */}
         <section id="how-it-works" className="py-20 px-4 sm:px-6 relative scroll-mt-24">
           <div className="w-full max-w-6xl mx-auto">
-            <div className="text-center max-w-lg mx-auto mb-16 space-y-3">
-              <span className="inline-block text-xs font-heading font-extrabold text-mustard bg-cyprus/5 dark:bg-sand/10 px-3 py-1 rounded-full uppercase tracking-wider">
-                Agentic Pipeline
-              </span>
-              <h2 className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl text-cyprus dark:text-sand">
+            
+            <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-heading font-extrabold uppercase tracking-widest text-teal-highlight bg-teal-highlight/10 border border-teal-highlight/20">
+                <Cpu size={10} className="animate-pulse" />
+                <span>Agentic Pipeline</span>
+              </div>
+              <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl text-cyprus dark:text-sand tracking-tight leading-tight">
                 Inside the Orchestrator Brain
               </h2>
-              <p className="font-sans text-xs sm:text-sm text-cyprus/70 dark:text-sand/70 leading-relaxed">
+              <div className="w-12 h-1 bg-teal-highlight/30 dark:bg-teal-highlight/40 mx-auto rounded-full" />
+              <p className="font-sans text-xs sm:text-sm md:text-base text-cyprus/70 dark:text-sand/70 max-w-lg mx-auto leading-relaxed">
                 Your conversational request flows asynchronously through a pipeline of five Google Gemini 1.5 Flash agents inside an n8n webhook workflow.
               </p>
             </div>
@@ -351,14 +390,17 @@ export default function Home() {
         {/* HIGH-FIDELITY APP VIEWS: BENTO GRID */}
         <section className="py-24 px-4 sm:px-6 bg-cyprus/5 dark:bg-cyprus-dark/20 border-y border-cyprus/5 dark:border-sand/5 relative">
           <div className="w-full max-w-6xl mx-auto">
-            <div className="text-center max-w-lg mx-auto mb-16 space-y-3">
-              <span className="inline-block text-xs font-heading font-extrabold text-mustard bg-cyprus/5 dark:bg-sand/10 px-3 py-1 rounded-full uppercase tracking-wider">
-                Interface showcase
-              </span>
-              <h2 className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl text-cyprus dark:text-sand">
+            
+            <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-heading font-extrabold uppercase tracking-widest text-mustard bg-mustard/10 border border-mustard/20">
+                <Smartphone size={10} className="animate-pulse" />
+                <span>Interface showcase</span>
+              </div>
+              <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl text-cyprus dark:text-sand tracking-tight leading-tight">
                 High-Fidelity Application Views
               </h2>
-              <p className="font-sans text-xs sm:text-sm text-cyprus/70 dark:text-sand/70 leading-relaxed">
+              <div className="w-12 h-1 bg-mustard/30 dark:bg-mustard/40 mx-auto rounded-full" />
+              <p className="font-sans text-xs sm:text-sm md:text-base text-cyprus/70 dark:text-sand/70 max-w-lg mx-auto leading-relaxed">
                 Designed for maximum perceived performance, premium usability, and complete transparency.
               </p>
             </div>
@@ -379,12 +421,27 @@ export default function Home() {
                   </div>
                 </div>
                 {/* Visual interface */}
-                <div className="space-y-1.5 mt-4 text-[10px] font-sans text-left font-semibold">
-                  <div className="flex items-center gap-1.5 text-green-600 dark:text-green-400">
-                    <CheckCircle2 size={10} /> GPS Location Resolved
+                <div className="mt-4 p-3 rounded-2xl bg-cyprus-dark/5 dark:bg-cyprus-dark/40 border border-cyprus/5 dark:border-sand/5 font-mono text-[9px] space-y-1.5 text-left">
+                  <div className="flex items-center justify-between text-green-600 dark:text-green-400 font-bold">
+                    <div className="flex items-center gap-1">
+                      <CheckCircle2 size={10} />
+                      <span>GPS Location Resolved</span>
+                    </div>
+                    <span>OK</span>
                   </div>
-                  <div className="flex items-center gap-1.5 text-green-600 dark:text-green-400">
-                    <CheckCircle2 size={10} /> Backend API Operational
+                  <div className="flex items-center justify-between text-green-600 dark:text-green-400 font-bold">
+                    <div className="flex items-center gap-1">
+                      <CheckCircle2 size={10} />
+                      <span>n8n API Router</span>
+                    </div>
+                    <span>200 OK</span>
+                  </div>
+                  <div className="flex items-center justify-between text-green-600 dark:text-green-400 font-bold">
+                    <div className="flex items-center gap-1">
+                      <CheckCircle2 size={10} />
+                      <span>Supabase Link Status</span>
+                    </div>
+                    <span>CONNECTED</span>
                   </div>
                 </div>
               </div>
@@ -402,15 +459,19 @@ export default function Home() {
                   </div>
                 </div>
                 {/* Visual interface */}
-                <div className="flex items-center justify-start gap-4 mt-4">
-                  <div className="w-8 h-8 rounded-full bg-teal-highlight/20 flex items-center justify-center text-teal-highlight animate-pulse shrink-0">
-                    <Mic size={14} />
+                <div className="mt-4 p-3.5 rounded-2xl bg-cyprus-dark/5 dark:bg-cyprus-dark/40 border border-cyprus/5 dark:border-sand/5 flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="relative w-8 h-8 rounded-full bg-teal-highlight/20 flex items-center justify-center text-teal-highlight shrink-0">
+                      <div className="absolute inset-0 rounded-full border border-teal-highlight/40 animate-ping" />
+                      <Mic size={14} />
+                    </div>
+                    <span className="font-heading font-bold text-[10px] text-cyprus dark:text-sand">Recording Urdu Speech...</span>
                   </div>
-                  <div className="flex items-end gap-1 h-5">
-                    <span className="w-1 h-3 bg-teal-highlight/60 rounded-full animate-bounce" />
-                    <span className="w-1 h-5 bg-teal-highlight rounded-full animate-bounce [animation-delay:0.1s]" />
-                    <span className="w-1 h-4 bg-teal-highlight/80 rounded-full animate-bounce [animation-delay:0.2s]" />
-                    <span className="w-1 h-2 bg-teal-highlight/40 rounded-full animate-bounce [animation-delay:0.3s]" />
+                  <div className="flex items-end gap-1 h-5 pb-0.5">
+                    <span className="w-[3px] h-3 bg-teal-highlight/60 rounded-full animate-bounce [animation-duration:0.8s]" />
+                    <span className="w-[3px] h-5 bg-teal-highlight rounded-full animate-bounce [animation-duration:0.6s]" />
+                    <span className="w-[3px] h-4 bg-teal-highlight/80 rounded-full animate-bounce [animation-duration:0.7s]" />
+                    <span className="w-[3px] h-2 bg-teal-highlight/40 rounded-full animate-bounce [animation-duration:0.9s]" />
                   </div>
                 </div>
               </div>
@@ -428,10 +489,20 @@ export default function Home() {
                   </div>
                 </div>
                 {/* Visual interface */}
-                <div className="flex gap-4 mt-4 font-mono text-[10px] font-bold text-cyprus/60 dark:text-sand/60">
-                  <span>Base Fee: Rs.1,200</span>
-                  <span>Travel (2.3km): Rs.200</span>
-                  <span className="text-cyprus dark:text-teal-highlight">Total: Rs.1,400</span>
+                <div className="mt-4 p-3 rounded-2xl bg-cyprus-dark/5 dark:bg-cyprus-dark/40 border border-cyprus/5 dark:border-sand/5 font-mono text-[9px] text-left space-y-1 text-cyprus/75 dark:text-sand/75">
+                  <div className="flex justify-between">
+                    <span>AC Gas Charge (Base)</span>
+                    <span className="font-bold">Rs. 1,200</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Travel Fee (2.3 km)</span>
+                    <span className="font-bold">Rs. 200</span>
+                  </div>
+                  <div className="h-[1px] bg-cyprus/10 dark:bg-sand/10 my-1" />
+                  <div className="flex justify-between text-cyprus dark:text-teal-highlight font-bold">
+                    <span>Total Amount</span>
+                    <span>Rs. 1,400</span>
+                  </div>
                 </div>
               </div>
 
@@ -448,9 +519,14 @@ export default function Home() {
                   </div>
                 </div>
                 {/* Visual interface */}
-                <div className="flex items-center gap-2 mt-4 text-[10px] font-mono text-cyprus/50 dark:text-sand/50">
-                  <span className="w-1.5 h-1.5 rounded-full bg-mustard animate-pulse" />
-                  <span>"Scanning 50+ providers…"</span>
+                <div className="mt-4 p-3 rounded-2xl bg-cyprus-dark/5 dark:bg-cyprus-dark/40 border border-cyprus/5 dark:border-sand/5 font-mono text-[9px] text-left space-y-1">
+                  <div className="flex items-center gap-1.5 text-mustard animate-pulse">
+                    <span className="w-1.5 h-1.5 rounded-full bg-mustard" />
+                    <span>Scanning 50+ providers nearby...</span>
+                  </div>
+                  <div className="text-cyprus/45 dark:text-sand/45">
+                    &gt; Filtering distance &lt; 5.0km... [OK]
+                  </div>
                 </div>
               </div>
 
