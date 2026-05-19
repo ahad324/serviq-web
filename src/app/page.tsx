@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { useScroll, useTransform, motion } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { useScroll, useTransform, motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import AppSimulator from "@/components/AppSimulator";
 import OrchestratorFlow from "@/components/OrchestratorFlow";
@@ -16,6 +16,23 @@ import {
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [introCompleted, setIntroCompleted] = useState(false);
+  const [cycleIndex, setCycleIndex] = useState(0);
+
+  const QUERIES = [
+    "AC repair kar do.",
+    "plumber near me.",
+    "electrician bulao.",
+    "car cleaning service.",
+    "handyman needed today."
+  ];
+
+  useEffect(() => {
+    if (!introCompleted) return;
+    const timer = setInterval(() => {
+      setCycleIndex((prev) => (prev + 1) % QUERIES.length);
+    }, 2800);
+    return () => clearInterval(timer);
+  }, [introCompleted]);
   
   // Track scroll position of the page for parallax effects
   const { scrollYProgress } = useScroll({
@@ -126,16 +143,27 @@ export default function Home() {
                 AI-Native Local Service Discovery
               </span>
               
-              <h1 className="font-heading font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-cyprus dark:text-sand leading-[0.95] max-w-4xl mx-auto text-balance">
-                Say goodbye to <br className="hidden sm:inline" />
-                search filters.<br />
-                <span className="text-cyprus-light dark:text-teal-highlight">
-                  Just tell us what you need.
+              <h1 className="font-heading font-black text-4xl sm:text-6xl md:text-7.5xl lg:text-8.5xl tracking-tight text-cyprus dark:text-sand leading-[0.9] max-w-4xl mx-auto text-balance">
+                Just talk to <br className="hidden sm:inline" />
+                find a... <br />
+                <span className="relative inline-block w-full text-center text-mustard dark:text-teal-highlight h-[1.15em] align-top overflow-hidden">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={cycleIndex}
+                      initial={{ opacity: 0, y: 35 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -35 }}
+                      transition={{ duration: 0.45, ease: [0.25, 1, 0.5, 1] }}
+                      className="absolute left-0 right-0 inline-block font-black text-[0.9em]"
+                    >
+                      "{QUERIES[cycleIndex]}"
+                    </motion.span>
+                  </AnimatePresence>
                 </span>
               </h1>
               
-              <p className="font-sans text-sm sm:text-base md:text-lg text-cyprus/80 dark:text-sand/80 max-w-2xl mx-auto leading-relaxed text-balance">
-                The first bilingual service matching engine that extracts intent from conversational English, Urdu, or Romanized Urdu voice prompts, connecting you with local technicians.
+              <p className="font-sans text-sm sm:text-base md:text-lg text-cyprus/80 dark:text-sand/80 max-w-3xl mx-auto leading-relaxed text-balance">
+                The world's first bilingual service matching engine. Speak naturally in English, Urdu, or Romanized Urdu, and watch the n8n orchestrator dispatch certified local expert technicians to your exact location instantly.
               </p>
 
               {/* Audio Wave Decorator */}
