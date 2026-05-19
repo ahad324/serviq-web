@@ -122,33 +122,48 @@ export default function Home() {
               className="w-full max-w-4xl mx-auto space-y-8 relative z-20 px-2 sm:px-4"
             >
               <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-heading font-extrabold text-mustard bg-cyprus/5 dark:bg-sand/10 px-3.5 py-1.5 rounded-full uppercase tracking-widest shadow-sm">
-              <Sparkles size={12} className="animate-pulse" />
-              AI-Native Local Service Discovery
-            </span>
-            
-            <h1 className="font-heading font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight text-cyprus dark:text-sand leading-[1.05] max-w-3xl mx-auto text-balance">
-              Say goodbye to search filters.<br />
-              <span className="text-cyprus-light dark:text-teal-highlight">Just tell us what you need.</span>
-            </h1>
-            
-            <p className="font-sans text-sm sm:text-base md:text-lg text-cyprus/80 dark:text-sand/80 max-w-2xl mx-auto leading-relaxed">
-              The first bilingual service matching engine that extracts intent from conversational English, Urdu, or Romanized Urdu voice prompts, connecting you with local technicians.
-            </p>
-            
-            <div className="flex flex-wrap gap-4 justify-center pt-4">
-              <a
-                href="#live-demo"
-                className="px-6 py-3.5 bg-gradient-to-r from-cyprus to-cyprus-light dark:from-teal-highlight dark:to-cyprus-light text-white dark:text-cyprus-dark rounded-full font-heading font-bold text-xs sm:text-sm shadow-lg shadow-cyprus/10 dark:shadow-teal-highlight/10 hover:scale-105 active:scale-95 transition-all duration-300"
-              >
-                Try the Live Sandbox
-              </a>
-              <a
-                href="#how-it-works"
-                className="px-6 py-3.5 border border-cyprus/15 dark:border-sand/15 hover:bg-cyprus/5 dark:hover:bg-sand/5 text-cyprus dark:text-sand rounded-full font-heading font-semibold text-xs sm:text-sm transition-all duration-300"
-              >
-                Explore Backend Architecture
-              </a>
-            </div>
+                <Sparkles size={12} className="animate-pulse" />
+                AI-Native Local Service Discovery
+              </span>
+              
+              <h1 className="font-heading font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-cyprus dark:text-sand leading-[0.95] max-w-4xl mx-auto text-balance">
+                Say goodbye to <br className="hidden sm:inline" />
+                search filters.<br />
+                <span className="text-cyprus-light dark:text-teal-highlight">
+                  Just tell us what you need.
+                </span>
+              </h1>
+              
+              <p className="font-sans text-sm sm:text-base md:text-lg text-cyprus/80 dark:text-sand/80 max-w-2xl mx-auto leading-relaxed text-balance">
+                The first bilingual service matching engine that extracts intent from conversational English, Urdu, or Romanized Urdu voice prompts, connecting you with local technicians.
+              </p>
+
+              {/* Audio Wave Decorator */}
+              <div className="flex items-center justify-center gap-1 h-8 pt-2">
+                <span className="w-1 h-3 bg-teal-highlight/40 dark:bg-teal-highlight/20 rounded-full animate-bounce [animation-duration:1.2s]" />
+                <span className="w-1 h-5 bg-teal-highlight/60 dark:bg-teal-highlight/45 rounded-full animate-bounce [animation-duration:0.8s] [animation-delay:0.1s]" />
+                <span className="w-1 h-7 bg-teal-highlight dark:bg-teal-highlight rounded-full animate-bounce [animation-duration:1s] [animation-delay:0.3s]" />
+                <span className="w-1 h-4 bg-teal-highlight/80 dark:bg-teal-highlight/60 rounded-full animate-bounce [animation-duration:0.9s] [animation-delay:0.2s]" />
+                <span className="w-1 h-2 bg-teal-highlight/30 dark:bg-teal-highlight/15 rounded-full animate-bounce [animation-duration:1.4s] [animation-delay:0.4s]" />
+              </div>
+              
+              <div className="flex flex-wrap gap-4 justify-center pt-6">
+                <a
+                  href="#live-demo"
+                  className="group relative px-8 py-4 bg-gradient-to-r from-cyprus to-cyprus-light dark:from-teal-highlight dark:to-emerald-400 text-white dark:text-cyprus-dark rounded-full font-heading font-extrabold text-xs sm:text-sm shadow-lg shadow-cyprus/15 dark:shadow-teal-highlight/15 hover:shadow-xl hover:shadow-teal-highlight/25 dark:hover:shadow-emerald-400/20 active:scale-95 transition-all duration-300 overflow-hidden"
+                >
+                  <div className="absolute inset-0 w-full h-full bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                  <span className="relative flex items-center gap-1.5">
+                    Try the Live Sandbox <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </a>
+                <a
+                  href="#how-it-works"
+                  className="px-8 py-4 border border-cyprus/15 dark:border-sand/20 hover:bg-cyprus/5 dark:hover:bg-sand/5 text-cyprus dark:text-sand rounded-full font-heading font-bold text-xs sm:text-sm active:scale-95 transition-all duration-300"
+                >
+                  Explore Backend Architecture
+                </a>
+              </div>
           </motion.div>
         </motion.div>
         </section>

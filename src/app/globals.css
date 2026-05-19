@@ -202,38 +202,36 @@ html, body {
 
 /* Subpixel rendering fix and GPU hardware acceleration helper classes */
 .accelerated-floating-layer {
-  transform: translate3d(0, 0, 0);
-  will-change: transform;
+  will-change: margin-top;
   backface-visibility: hidden;
-  transform-style: preserve-3d;
 }
 
-@keyframes float-badge-1 {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(0, -6px, 0); }
+@keyframes float-margin-1 {
+  0%, 100% { margin-top: 0px; }
+  50% { margin-top: -8px; }
 }
-@keyframes float-badge-2 {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(0, 6px, 0); }
+@keyframes float-margin-2 {
+  0%, 100% { margin-top: 0px; }
+  50% { margin-top: 8px; }
 }
-@keyframes float-badge-3 {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(0, -5px, 0); }
+@keyframes float-margin-3 {
+  0%, 100% { margin-top: 0px; }
+  50% { margin-top: -6px; }
 }
-@keyframes float-badge-4 {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(0, 5px, 0); }
+@keyframes float-margin-4 {
+  0%, 100% { margin-top: 0px; }
+  50% { margin-top: 6px; }
 }
 
 .animate-float-1 {
-  animation: float-badge-1 4s ease-in-out infinite;
+  animation: float-margin-1 4s ease-in-out infinite;
 }
 .animate-float-2 {
-  animation: float-badge-2 4.5s ease-in-out infinite;
+  animation: float-margin-2 4.5s ease-in-out infinite;
 }
 .animate-float-3 {
-  animation: float-badge-3 5s ease-in-out infinite;
+  animation: float-margin-3 5s ease-in-out infinite;
 }
 .animate-float-4 {
-  animation: float-badge-4 4.8s ease-in-out infinite;
+  animation: float-margin-4 4.8s ease-in-out infinite;
 }
