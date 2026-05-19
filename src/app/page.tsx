@@ -90,7 +90,7 @@ export default function Home() {
               <div className="p-1.5 rounded-lg bg-mustard/10 text-mustard">
                 <Sparkles size={14} />
               </div>
-              <span className="font-sans text-[10px] font-bold text-cyprus dark:text-sand">Gemini 1.5 Flash: 98% Conf</span>
+              <span className="font-sans text-[10px] font-bold text-cyprus dark:text-sand">Gemini 3 Flash: 98% Conf</span>
             </div>
           </motion.div>
 
@@ -379,7 +379,7 @@ export default function Home() {
               </h2>
               <div className="w-12 h-1 bg-teal-highlight/30 dark:bg-teal-highlight/40 mx-auto rounded-full" />
               <p className="font-sans text-xs sm:text-sm md:text-base text-cyprus/70 dark:text-sand/70 max-w-lg mx-auto leading-relaxed">
-                Your conversational request flows asynchronously through a pipeline of five Google Gemini 1.5 Flash agents inside an n8n webhook workflow.
+                Your conversational request flows asynchronously through a pipeline of five Google Gemini 3 Flash agents inside an n8n webhook workflow.
               </p>
             </div>
 

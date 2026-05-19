@@ -42,7 +42,7 @@ const MEMBERS: TeamMember[] = [
     avatarInitials: "MN",
     gradient: "from-cyprus-light to-mustard",
     icon: Cpu,
-    techStack: ["n8n Workflows", "Gemini 1.5 Flash", "Supabase DB", "Railway API", "JSON Schema"],
+    techStack: ["n8n Workflows", "Gemini 3 Flash", "Supabase DB", "Railway API", "JSON Schema"],
     contributions: [
       "Designed the 5-agent n8n orchestrator intent mapping pipeline.",
       "Constructed secure Row-Level Security rules and Supabase relational schemas.",

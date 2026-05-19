@@ -48,7 +48,7 @@ const NODES: NodeData[] = [
     name: "Intent Extraction Agent",
     type: "gemini-agent",
     icon: Tag,
-    summary: "Gemini 1.5 Flash query categorization.",
+    summary: "Gemini 3 Flash query categorization.",
     description: "Extracts semantic service classification (e.g. mapping colloquial Urdu 'ac leak' to Google Places tag 'home_goods_store/electrician'), filters out garbage, and determines urgency.",
     input: `query: "ac leak kar raha hai…"`,
     output: `{ "service_category": "ac_repair", "urgency": "HIGH", "confidence": 0.98 }`
