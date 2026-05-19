@@ -126,16 +126,15 @@ export default function Home() {
                 AI-Native Local Service Discovery
               </span>
               
-              <h1 className="font-heading font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-cyprus dark:text-sand leading-[0.95] max-w-4xl mx-auto text-balance">
-                Say goodbye to <br className="hidden sm:inline" />
-                search filters.<br />
-                <span className="text-cyprus-light dark:text-teal-highlight">
-                  Just tell us what you need.
+              <h1 className="font-heading font-black text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tight text-cyprus dark:text-sand leading-[0.9] max-w-4xl mx-auto text-balance">
+                Speak naturally.<br />
+                <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-mustard to-amber-500 dark:from-teal-highlight dark:to-emerald-400 glow-effect">
+                  Orchestrate instantly.
                 </span>
               </h1>
               
-              <p className="font-sans text-sm sm:text-base md:text-lg text-cyprus/80 dark:text-sand/80 max-w-2xl mx-auto leading-relaxed text-balance">
-                The first bilingual service matching engine that extracts intent from conversational English, Urdu, or Romanized Urdu voice prompts, connecting you with local technicians.
+              <p className="font-sans text-sm sm:text-base md:text-lg text-cyprus/85 dark:text-sand/85 max-w-3xl mx-auto leading-relaxed text-balance">
+                Say goodbye to complex forms and rigid search filters. Serviq parses natural voice commands in English, Urdu, or Romanized Urdu to match, price, and dispatch certified local experts to your coordinates in under 30 seconds.
               </p>
 
               {/* Audio Wave Decorator */}
