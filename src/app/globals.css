@@ -6,7 +6,7 @@
 
 @theme inline {
   --font-sans: var(--font-plus-jakarta-sans), sans-serif;
-  --font-heading: var(--font-space-grotesk), sans-serif;
+  --font-heading: var(--font-bricolage-grotesque), sans-serif;
   --font-mono: var(--font-geist-mono), monospace;
 
   /* Custom Serviq Colors */

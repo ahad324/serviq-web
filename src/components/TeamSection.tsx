@@ -82,7 +82,7 @@ export default function TeamSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
-              className="p-6 sm:p-8 glass-container rounded-[32px] text-left flex flex-col justify-between hover:border-cyprus/20 dark:hover:border-teal-highlight/40 hover:shadow-xl hover:shadow-cyprus/5 transition-all duration-300 group relative overflow-hidden"
+              className="p-6 sm:p-8 glass-container rounded-xl text-left flex flex-col justify-between hover:border-cyprus/20 dark:hover:border-teal-highlight/40 hover:shadow-xl hover:shadow-cyprus/5 transition-all duration-300 group relative overflow-hidden"
             >
               <div>
                 {/* Profile Header */}

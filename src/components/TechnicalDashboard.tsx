@@ -14,7 +14,7 @@ export default function TechnicalDashboard() {
   ];
 
   return (
-    <div className="w-full max-w-5xl mx-auto my-12 glass-container rounded-3xl p-5 sm:p-6 md:p-8 text-left border border-cyprus/10 dark:border-sand/10">
+    <div className="w-full max-w-5xl mx-auto my-12 glass-container rounded-xl p-5 sm:p-6 md:p-8 text-left border border-cyprus/10 dark:border-sand/10">
       {/* Heading */}
       <div className="mb-8">
         <span className="inline-block text-xs font-heading font-extrabold text-mustard bg-cyprus/5 dark:bg-sand/10 px-3 py-1 rounded-full uppercase tracking-wider mb-3">

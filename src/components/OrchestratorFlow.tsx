@@ -129,7 +129,7 @@ export default function OrchestratorFlow() {
   return (
     <div className="w-full flex flex-col xl:flex-row gap-6 items-stretch justify-center max-w-6xl mx-auto my-8 px-2 sm:px-4">
       {/* Node Grid Map */}
-      <div className="flex-1 p-5 sm:p-6 glass-container rounded-3xl flex flex-col justify-between">
+      <div className="flex-1 p-5 sm:p-6 glass-container rounded-xl flex flex-col justify-between">
         <div>
           <div className="flex items-center gap-2 mb-3">
             <span className="inline-block text-[10px] font-heading font-extrabold text-mustard bg-cyprus/5 dark:bg-sand/10 px-2.5 py-1 rounded-full uppercase tracking-wider">
@@ -211,7 +211,7 @@ export default function OrchestratorFlow() {
       </div>
 
       {/* Details Inspector Panel */}
-      <div className="w-full xl:w-[350px] p-5 sm:p-6 glass-container rounded-3xl flex flex-col justify-between border border-cyprus/10 dark:border-teal-highlight/20 relative overflow-hidden shrink-0">
+      <div className="w-full xl:w-[350px] p-5 sm:p-6 glass-container rounded-xl flex flex-col justify-between border border-cyprus/10 dark:border-teal-highlight/20 relative overflow-hidden shrink-0">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeNode.id}

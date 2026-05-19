@@ -158,7 +158,7 @@ export default function AppSimulator() {
   return (
     <div className="w-full flex flex-col lg:flex-row gap-8 items-stretch justify-center max-w-5xl mx-auto">
       {/* Preset Control Panel */}
-      <div className="flex-1 flex flex-col justify-between gap-6 p-6 glass-container rounded-3xl">
+      <div className="flex-1 flex flex-col justify-between gap-6 p-6 glass-container rounded-xl">
         <div>
           <span className="inline-block text-xs font-heading font-extrabold text-mustard bg-cyprus/5 dark:bg-sand/10 px-3 py-1 rounded-full uppercase tracking-wider mb-3">
             Interactive sandbox
